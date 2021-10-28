@@ -3,7 +3,7 @@ import { trim } from '../utils/tools'
 import detector from './userAgent'
 import win from './win'
 
-// 域
+// 域 domain 完成时间 纠错时间
 export const domain = (referrer: string) => {
   const split = referrer.split('/')
   if (split.length >= 3) {

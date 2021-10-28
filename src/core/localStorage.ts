@@ -32,7 +32,7 @@ function localStorageSupported () {
   return supported
 }
 
-export default class LocalStoreage {
+export default class LocalStorage {
   // 设置存储名称
   public name: string = ''
   public storage: any

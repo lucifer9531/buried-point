@@ -1,7 +1,7 @@
 const T = function () {
-  const d = 1 * Number(new Date())
+  const d = Number(new Date()) << 0
   let i = 0
-  while (d == 1 * Number(new Date())) {
+  while (d == Number(new Date()) << 0) {
     i++
   }
   return d.toString(16) + i.toString(16)

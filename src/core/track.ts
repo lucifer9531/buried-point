@@ -7,13 +7,13 @@ import cache from './cache'
 import Frame from './router'
 
 // 本地存储
-import LocalStoreage from './localStorage'
+import LocalStorage from './localStorage'
 
 export default class Track {
   // 实例使用的配置
   public config!: { [key: string]: any }
   // 自定义localStorage实例
-  public localStorage!: LocalStoreage
+  public localStorage!: LocalStorage
   // event实例
   public event!: EventTrack
   // 框架router实例
@@ -31,7 +31,7 @@ export default class Track {
     this.setConfig(extend({}, DEFAULT_CONFIG, CONFIG, config, { token }))
 
     // 创建LocalStorage实例
-    this.localStorage = new LocalStoreage(this.config)
+    this.localStorage = new LocalStorage(this.config)
     // 创建框架Router实例
     this.router = new Frame()
 

@@ -15,7 +15,6 @@ export default class Router {
     this.instance = cache.instance
     this.localStorage = this.instance.localStorage
     this.router = this.instance.getConfig('router')
-    // setTimeout(() => {}, 0)
     this.vue()
   }
 

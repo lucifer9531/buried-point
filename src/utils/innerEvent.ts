@@ -3,8 +3,9 @@ class InnerEvent {
   public list: { [key: string]: Array<Function> } = {}
 
   /**
-   * 订阅
-   *
+   * 发送
+   * @param key
+   * @param fn
    */
   on (key: string, fn: Function) {
     if (!this.list[key]) {
@@ -13,6 +14,10 @@ class InnerEvent {
     this.list[key].push(fn)
   }
 
+  /**
+   * 消息关闭
+   * @param key
+   */
   off (key: string) {
     if (!this.list[key]) {
       return
@@ -20,8 +25,11 @@ class InnerEvent {
       delete this.list[key]
     }
   }
+
   /**
    * 推送
+   * @param key
+   * @param args
    */
   trigger (key: string, ...args: any[]) {
     let arrFn = this.list && this.list[key]
