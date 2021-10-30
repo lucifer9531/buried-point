@@ -102,8 +102,7 @@ export default class EventTrack {
    * 判断条件：会话首次开始、指定的一段时间内用户无事件操作、其它渠道进来
    */
   session (callback?: Function, dataType?: string) {
-    let sessionStartTime =
-      (1 * this.instance.getProperty('sessionStartTime')) / 1000
+    let sessionStartTime = (1 * this.instance.getProperty('sessionStartTime')) / 1000
     let updatedTime = (1 * this.instance.getProperty('updatedTime')) / 1000
     let now = new Date().getTime()
     let nowDateTimeMs = now
@@ -263,9 +262,9 @@ export default class EventTrack {
       // 当前页进入时间
       entryTime: this.instance.getProperty('entryTime'),
       // // 当前页的路由规则
-      // routeRule: this.instance.getProperty('routeRule'),
+      routeRule: this.instance.getProperty('routeRule'),
       // // 当前页的路由中文名
-      // routeZhName: this.instance.getProperty('routeZhName'),
+      routeZhName: this.instance.getProperty('routeZhName'),
       // 上一页url
       parentUrl: this.instance.getProperty('parentUrl'),
       // 页面url
@@ -316,7 +315,9 @@ export default class EventTrack {
     if (isNumber(truncateLength) && truncateLength > 0) {
       sys = truncate(sys, truncateLength)
     }
-    let truncatedData = { sys, ext }
+
+    // let truncatedData = { sys, ext }
+    let truncatedData = { sys, ext: { ext: JSON.stringify(ext) } }
 
     const callbackFn = (response: any) => {
       if (callback) {
@@ -331,9 +332,7 @@ export default class EventTrack {
     sendRequest(url, trackType, truncatedData, callbackFn)
 
     // 当触发的事件不是这些事件(sessionStart,sessionClose,activate)时，触发检测 session 方法
-    if (
-      ['sessionStart', 'sessionClose', 'activate'].indexOf(eventName) === -1
-    ) {
+    if (['sessionStart', 'sessionClose', 'activate'].indexOf(eventName) === -1) {
       this.session(() => {}, dataType)
     }
 

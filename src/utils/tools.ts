@@ -39,7 +39,7 @@ export function isArray (obj: any) {
 
 export function assert (condition: boolean, msg: string) {
   if (!condition) {
-    throw new Error(`[Pio] ${msg}`)
+    throw new Error(`[Monitor] ${msg}`)
   }
 }
 

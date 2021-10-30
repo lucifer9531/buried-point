@@ -7,7 +7,7 @@ function isDebug () {
 const console = {
   group (...args: any[]) {
     if (isDebug()) {
-      args = ['Pio:'].concat(args)
+      args = ['Monitor:'].concat(args)
       try {
         windowConsole.group(...args)
       } catch (err) {
@@ -28,7 +28,7 @@ const console = {
   },
   log (...args: any[]) {
     if (isDebug()) {
-      args = ['Pio:'].concat(args)
+      args = ['Monitor:'].concat(args)
       try {
         windowConsole.warn.apply(windowConsole, args as any)
       } catch (err) {
@@ -40,7 +40,7 @@ const console = {
   },
   error: function (...args: any[]) {
     if (isDebug()) {
-      args = ['Pio:'].concat(args)
+      args = ['Monitor:'].concat(args)
       try {
         windowConsole.error.apply(windowConsole, args as any)
       } catch (err) {

@@ -55,8 +55,12 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from "vue-property-decorator"
-import { trackEvent } from '../../../src/index'
-@Component
+import { trackEvent } from '../../../src'
+
+@Component({
+  name: 'HelloWorld'
+})
+
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string
   bb = 123

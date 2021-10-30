@@ -1,4 +1,4 @@
-import pio from './track'
+import monitor from './track'
 import LocalStorage from './localStorage'
 import { isFunction, isObject, each, isNumber, truncate } from '../utils/tools'
 import {
@@ -10,12 +10,12 @@ import console from '../utils/console'
 import sendRequest from './request'
 
 class UserTrack {
-  // pio实例
-  public instance: pio
+  // monitor
+  public instance: monitor
   // localStorage实例
   public localStorage: LocalStorage
-  constructor (pio: pio) {
-    this.instance = pio
+  constructor (monitor: monitor) {
+    this.instance = monitor
     this.localStorage = this.instance.localStorage
   }
   /**

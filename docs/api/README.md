@@ -4,15 +4,15 @@ sidebar: auto
 
 # API 参考
 
-## Pio.Track
+## Monitor.Track
 
 ```js
-import Pio from "pio";
+import Monitor from "@monitor/buried-point";
 
-new Pio.Track(token, { ...config });
+new Monitor.Track(token, { ...config });
 ```
 
-## Pio.Track 构造器选项
+## Monitor.Track 构造器选项
 
 ### token
 
@@ -71,7 +71,7 @@ new Pio.Track(token, { ...config });
 
   [详细介绍](/api/#config-埋点配置项)
 
-## Pio 实例属性
+## Monitor 实例属性
 
 ### trackEvent
 
@@ -100,11 +100,11 @@ new Pio.Track(token, { ...config });
 
   ```js
   // 使用函数调用
-  import { trackEvent } from "pio";
+  import { trackEvent } from "@monitor/buried-point";
   trackEvent("buy", { price: "123" });
 
   // 使用装饰器调用
-  import { trackEvent } from "pio";
+  import { trackEvent } from "@monitor/buried-point";
   @Component
   export default class HelloWorld extends Vue {
     price = "123";
@@ -125,7 +125,7 @@ new Pio.Track(token, { ...config });
 {
   // 业务数据，根据业务需求进行定制
   ext:{},
-  // 系统数据，Pio自动采集分析生成
+  // 系统数据，Monitor自动采集分析生成
   sys:{
     // 埋点事件类型，se:工具自动埋点，be:业务手动埋点
     dataType: string;

@@ -1,9 +1,9 @@
-import Pio from './track'
+import Monitor from './track'
 
 export class Cache {
-  // pio是否已实例化
+  // Monitor是否已实例化
   public loaded: boolean = false
-  public instance!: Pio
+  public instance!: Monitor
 }
 
 export default new Cache()

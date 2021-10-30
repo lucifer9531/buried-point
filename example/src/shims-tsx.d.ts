@@ -12,7 +12,7 @@ declare global {
     }
   }
   interface Window {
-    pio: Cache;
+    monitor: Cache;
   }
 }
 

@@ -16,8 +16,8 @@ import console from '../utils/console'
 function localStorageSupported () {
   let supported = true
   try {
-    let key = '__pioSupport__',
-      val = 'pio_web_data_sdk'
+    let key = '__monitorSupport__',
+      val = 'monitor_web_data_sdk'
     localStorage.set(key, val)
     if (localStorage.get(key) !== val) {
       supported = false

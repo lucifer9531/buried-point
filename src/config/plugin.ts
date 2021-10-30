@@ -3,7 +3,7 @@ const pkg = require('../../package.json')
 // 配置
 export const CONFIG = {
   // 插件名称
-  pluginName: 'pio',
+  pluginName: 'monitor',
   debug: false,
   version: pkg.version
 }

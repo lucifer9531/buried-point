@@ -9,8 +9,8 @@ Buried-point 是一个专为 **前端埋点** 开发的 **全量数据采集工�
 ```js
 // 工程入口文件
 // url改变时将触发工具自动埋点
-import Pio from "@monitor/buried-point";
-new Pio.Track("projectName", { router });
+import Monitor from "@monitor/buried-point";
+new Monitor.Track("projectName", { router });
 
 // 业务逻辑
 // 使用函数调用
@@ -42,7 +42,7 @@ export default class HelloWorld extends Vue {
 - **SYSTEM_EVENTS**，工具自动埋点；
 - **BUSSINESS_EVENTS**，业务手动埋点。
 
-在实例化 **Pio.Track** 后，Pio 将自动**采集分析**以下数据：
+在实例化 **Monitor.Track** 后，Monitor 将自动**采集分析**以下数据：
 
 - 当前页面信息
 - 页面来源

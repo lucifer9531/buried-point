@@ -5,6 +5,7 @@ import EventTrack from './evenTrack'
 import console from '../utils/console'
 import cache from './cache'
 import Frame from './router'
+import ErrorCatch from './errorCatch'
 
 // 本地存储
 import LocalStorage from './localStorage'
@@ -18,6 +19,8 @@ export default class Track {
   public event!: EventTrack
   // 框架router实例
   public router!: Frame
+  // errorCatch
+  public errorCatch!: ErrorCatch
   constructor (token: string, config: IConfig) {
     if (cache.loaded) {
       return
@@ -34,6 +37,8 @@ export default class Track {
     this.localStorage = new LocalStorage(this.config)
     // 创建框架Router实例
     this.router = new Frame()
+    // 创建 errorCatch 异常捕获实例
+    this.errorCatch = ErrorCatch.create()
 
     // 实例化追踪事件对象
     this.event = new EventTrack()
@@ -48,6 +53,8 @@ export default class Track {
 
     // persistedTime 首次访问应用时间
     this.localStorage.registerOnce({ persistedTime: new Date().getTime() }, '')
+    // 执行栈错误的监听
+    // this.errorCatch.init()
   }
 
   /**
