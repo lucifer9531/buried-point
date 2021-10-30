@@ -2,7 +2,7 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
-import Monitor, { trackEvent } from '../../src/index';
+import Monitor, { trackEvent } from '@monitor/buried-point';
 
 import { sync } from 'vuex-router-sync';
 

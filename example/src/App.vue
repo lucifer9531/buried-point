@@ -11,8 +11,8 @@
   </div>
 </template>
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import { trackEvent } from '../../src/index'
+import { Component, Vue } from "vue-property-decorator"
+import { trackEvent } from '@monitor/buried-point'
 @Component
 export default class App extends Vue {
   go() {

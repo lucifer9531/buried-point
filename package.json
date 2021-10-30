@@ -1,6 +1,6 @@
 {
   "name": "@monitor/buried-point",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "前端埋点采集库，支持全埋点、代码埋点、装饰器埋点",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
